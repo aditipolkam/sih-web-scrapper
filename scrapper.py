@@ -24,9 +24,9 @@ def scrape_problems():
 
         problem_dict = {
             "id": data[0],
+            "code": data[10],
             "institution": data[1],
             "problem_statement": desc,
-            "code": data[10],
         }
         problems.append(problem_dict)
 
