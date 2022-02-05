@@ -19,10 +19,12 @@ for row in table.findChildren("tr", recursive=False):
     for table_data in row.find_all("td"):
         data.append(table_data.text.strip().replace("\n", "").replace("  ", ""))
 
+    desc = row.find("table", {"id": "settings"}).find("tr").find("td").text.strip()
+
     problem_dict = {
         "id": data[0],
         "institution": data[1],
-        "problem_statement": data[2],
+        "problem_statement": desc,
         "code": data[10],
     }
     problems.append(problem_dict)
